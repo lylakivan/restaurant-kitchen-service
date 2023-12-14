@@ -1,18 +1,14 @@
 {% extends "base.html" %}
-
+{% block title %}
+<title>Home Page</title>
+{%endblock %}
 {% block content %}
-    <h1>Kitchen Service Home</h1>
-    <p>Welcome to Best Restaurant Ever!</p>
-    <h2>Dynamic content</h2>
-    <p>The Kitchen service has the following record counts:</p>
-    <ul>
-        <li><strong>Dishes:</strong> {{ num_dishes }}</li>
-        <li><strong>Cooks:</strong> {{ num_cooks }}</li>
-        <li><strong>DishTypes:</strong> {{ num_dish_types }}</li>
-    </ul>
-
-    <p>You have visited this page
-        {{ num_visits }} time{{ num_visits|pluralize }}.
-    </p>
-
+<h1>Kitchen Service Home</h1>
+<p>Welcome to the Greater Restaurant</p>
+<h3>Dynamic content</h3>
+<ul>
+  <li><strong>Dishes:</strong> {{ num_dishes }}</li>
+  <li><strong>Cooks:</strong> {{ num_cooks }}</li>
+  <li><strong>DishTypes:</strong> {{ num_dish_types }}</li>
+</ul>
 {% endblock %}

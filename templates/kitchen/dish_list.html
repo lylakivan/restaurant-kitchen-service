@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Cook List</h1>
-  {% if 
-<!--  <ul>-->
-<!--    {% for dish_type in dish_type_list %}-->
-<!--      <li>{{ dish_type.name }}</li>-->
-<!--    {% empty %}-->
-<!--      <p>There are no dish</p>-->
-<!--    {% endfor %}-->
-
-<!--  </ul>-->
+  <h1>Dish List</h1>
+  {% if dish_list %}
+    <ul>
+      {% for dish in dish_list %}
+        <li><a href="#">{{ dish.name }} ({{dish.price}}, {{dish.dish_type}}) </a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 {% endblock %}

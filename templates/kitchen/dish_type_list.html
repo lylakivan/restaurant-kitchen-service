@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Dish Type</h1>
+  <ul>
+    {% for dish_type in dish_type_list %}
+      <li>{{ dish_type.name }}</li>
+    {% empty %}
+      <p>There are no dish</p>
+    {% endfor %}
+
+  </ul>
+{% endblock %}

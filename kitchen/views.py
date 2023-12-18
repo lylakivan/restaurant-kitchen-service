@@ -1,10 +1,12 @@
-from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.views import generic
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from kitchen.models import Cook, Dish, DishType
 
 
+@login_required
 def index(request):
     """View function for the home page of the site."""
 
@@ -25,16 +27,19 @@ def index(request):
     return render(request, "kitchen/index.html", context=context)
 
 
-class DishTypeListView(generic.ListView):
+class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
+    paginate_by = 2
     template_name = "kitchen/dish_type_list.html"
     context_object_name = "dish_type_list"
 
 
-
-class DishListView(generic.ListView):
+class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
+    paginate_by = 2
     queryset = Dish.objects.select_related("dish_type")
 
-class CookListView(generic.ListView):
+
+class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
+    paginate_by = 2

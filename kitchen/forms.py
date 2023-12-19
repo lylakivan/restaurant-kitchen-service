@@ -39,6 +39,12 @@ class DishForm(forms.ModelForm):
         fields = ['name', 'description', 'price', 'dish_type', 'cook']
 
 
+class DishCreateForm(forms.ModelForm):
+    class Meta:
+        model = Dish
+        fields = "__all__"
+
+
 class DishSearchForm(forms.Form):
     name = forms.CharField(
         max_length=63,

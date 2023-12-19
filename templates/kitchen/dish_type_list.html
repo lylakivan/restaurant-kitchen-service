@@ -15,8 +15,7 @@
               <td>
                   {{ dish_type.id }}
               </td>
-              <td>
-                  {{ dish_type.name }}
+              <td><a href="{% url 'kitchen:dish_type-detail' pk=dish_type.id %}">{{ dish_type.name }}</a>
               </td>
               <td>
                   {{ dish_type.country }}

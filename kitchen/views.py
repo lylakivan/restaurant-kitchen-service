@@ -11,7 +11,7 @@ from kitchen.forms import (
     CookCreateForm,
     DishForm,
     DishCreateForm,
-    DishSearchForm
+    DishSearchForm,
 )
 from kitchen.models import Cook, Dish, DishType
 
@@ -44,10 +44,6 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     context_object_name = "dish_type_list"
 
 
-class DishTypeDetailView(LoginRequiredMixin, generic.DetailView):
-    model = DishType
-
-
 class DishTypeCreateView(LoginRequiredMixin, CreateView):
     model = DishType
     form_class = DishTypeForm
@@ -57,7 +53,8 @@ class DishTypeCreateView(LoginRequiredMixin, CreateView):
 
 class DishTypeUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = DishType
-    form_class = DishTypeForm
+    # form_class = DishTypeForm
+    fields = "__all__"
     success_url = reverse_lazy("kitchen:dish_type-list")
     template_name = "kitchen/dish_type_form.html"
 
@@ -90,8 +87,8 @@ class DishListView(LoginRequiredMixin, generic.ListView):
 
 class DishCreateView(LoginRequiredMixin, generic.CreateView):
     model = Dish
-    # fields = "__all__"
-    form_class = DishCreateForm
+    fields = "__all__"
+    # form_class = DishCreateForm
     success_url = reverse_lazy("kitchen:dish-list")
 
 

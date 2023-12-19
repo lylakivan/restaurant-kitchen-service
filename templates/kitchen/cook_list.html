@@ -1,12 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Cook List</h1>
+  <h1>Cook List<a style="float: right" href="{% url 'kitchen:cook-create' %}">Create</a></h1>
   {% if cook_list %}
-    <ul>
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Yars of experience</th>
+      </tr>
+      </thead>
+      <tbody>
       {% for cook in cook_list %}
-        <li><a href="#">{{ cook.username }} ({{cook.first_name}}, {{cook.last_name}}, {{cook.email}}, {{cook.years_of_experience}}) </a></li>
+        <tr>
+          <td>{{ cook.id }}</td>
+          <td><a href="{% url 'kitchen:cook-detail' pk=cook.id %}">{{ cook.username }} {% if user == cook %} (Me){% endif %}</a></td>
+          <td>{{ cook.first_name }}</td>
+          <td>{{ cook.last_name }}</td>
+          <td>{{ cook.years_of_experience }}</td>
+        </tr>
       {% endfor %}
-    </ul>
+      </tbody>
+    </table>
   {% endif %}
 {% endblock %}

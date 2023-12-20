@@ -9,9 +9,11 @@ from django.views.generic import DetailView, CreateView
 from kitchen.forms import (
     DishTypeForm,
     CookCreateForm,
+    CookUpdateForm,
     DishForm,
-    DishCreateForm,
+    # DishCreateForm,
     DishSearchForm,
+    # CookForm,
 )
 from kitchen.models import Cook, Dish, DishType
 
@@ -123,6 +125,12 @@ class CookDetailView(LoginRequiredMixin, DetailView):
 class CookCreateView(LoginRequiredMixin, generic.CreateView):
     model = Cook
     form_class = CookCreateForm
+    success_url = reverse_lazy("kitchen:cook-list")
+
+
+class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = get_user_model()
+    fields = ["first_name", "last_name", "years_of_experience",]
     success_url = reverse_lazy("kitchen:cook-list")
 
 

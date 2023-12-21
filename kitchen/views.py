@@ -9,11 +9,9 @@ from django.views.generic import DetailView, CreateView
 from kitchen.forms import (
     DishTypeForm,
     CookCreateForm,
-    CookUpdateForm,
     DishForm,
-    # DishCreateForm,
     DishSearchForm,
-    # CookForm,
+    CookUpdateForm,
 )
 from kitchen.models import Cook, Dish, DishType
 
@@ -55,7 +53,6 @@ class DishTypeCreateView(LoginRequiredMixin, CreateView):
 
 class DishTypeUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = DishType
-    # form_class = DishTypeForm
     fields = "__all__"
     success_url = reverse_lazy("kitchen:dish_type-list")
     template_name = "kitchen/dish_type_form.html"
@@ -90,7 +87,6 @@ class DishListView(LoginRequiredMixin, generic.ListView):
 class DishCreateView(LoginRequiredMixin, generic.CreateView):
     model = Dish
     fields = "__all__"
-    # form_class = DishCreateForm
     success_url = reverse_lazy("kitchen:dish-list")
 
 
@@ -130,8 +126,18 @@ class CookCreateView(LoginRequiredMixin, generic.CreateView):
 
 class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = get_user_model()
-    fields = ["first_name", "last_name", "years_of_experience",]
+    # fields = ["first_name", "last_name", "years_of_experience",]
+    form_class = CookUpdateForm
+
     success_url = reverse_lazy("kitchen:cook-list")
+
+    def form_valid(self, form):
+        cook = form.save(commit=False)
+        cook.dishes.clear()
+        for dish in form.cleaned_data['dishes']:
+            cook.dishes.add(dish)
+        cook.save()
+        return super().form_valid(form)
 
 
 class CookDeleteView(LoginRequiredMixin, generic.DeleteView):

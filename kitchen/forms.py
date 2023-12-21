@@ -40,9 +40,15 @@ class CookCreateForm(UserCreationForm):
 
 
 class CookUpdateForm(forms.ModelForm):
+    dishes = forms.ModelMultipleChoiceField(
+        queryset=Dish.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False,
+    )
+
     class Meta:
         model = get_user_model()
-        fields = ["first_name", "last_name", "years_of_experience",]
+        fields = ["first_name", "last_name", "years_of_experience","dishes"]
 
 
 class DishForm(forms.ModelForm):
@@ -64,19 +70,6 @@ class DishCreateForm(forms.ModelForm):
 
 
 class DishSearchForm(forms.Form):
-    name = forms.CharField(
-        max_length=63,
-        required=False,
-        label="",
-        widget=forms.TextInput(
-            attrs={
-                "placeholder": "Search by name"
-            }
-        )
-    )
-
-
-class DishTypeSearchForm(forms.Form):
     name = forms.CharField(
         max_length=63,
         required=False,

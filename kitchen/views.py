@@ -126,7 +126,6 @@ class CookCreateView(LoginRequiredMixin, generic.CreateView):
 
 class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = get_user_model()
-    # fields = ["first_name", "last_name", "years_of_experience",]
     form_class = CookUpdateForm
 
     success_url = reverse_lazy("kitchen:cook-list")

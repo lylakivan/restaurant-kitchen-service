@@ -11,7 +11,7 @@ class DishType(models.Model):
     class Meta:
         verbose_name = "dish type"
         verbose_name_plural = "dish types"
-        ordering = ('name',)
+        ordering = ('name', )
 
     def __str__(self):
         return f"{self.name}"

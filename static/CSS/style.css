@@ -12,3 +12,8 @@ body {
     float: right;
     margin: 0 2px 0 2px;
 }
+
+.navbar {
+  position: relative;
+  z-index: 1000;
+}

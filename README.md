@@ -6,11 +6,16 @@ Django project for restaurant kitchen service
 
 [Restaurant Kitchen Service deployed to Render](https://restaurant-mate-8on4.onrender.com)
 
+You can use the following login details
+
+Username: admin
+Password: gtb?M237
+
 ## Instalation
 
 Pyhton3 must be already installed
 ```shell
-git clone https://github.com/Naz-iv/restaurant_kitchen_service.git
+git clone https://github.com/lylakivan/restaurant-kitchen-service
 cd restaurant_kitchen_service
 python3 -m venv venv
 source venv/Script/activate

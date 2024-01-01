@@ -17,9 +17,9 @@ Username: admin
 
 Password: gtb?M237
 
-## Instalation
+## Installation
 
-Pyhton3 must be already installed
+Pyhton3 should be already installed
 ```shell
 git clone https://github.com/lylakivan/restaurant-kitchen-service
 cd restaurant_kitchen_service
@@ -30,15 +30,15 @@ python manage.py runserver
 ```
 
 ## Features
-1. DishType Management:
+1. **DishType Management:**
 * Easily manage and categorize dishes with the DishType table.
 * Add, edit, and delete dish types to organize the menu efficiently.
 
-2. Dish Management:
+2. **Dish Management:**
 * Create, update, and delete dishes with essential details such as name, description, and price.
 * Associate dishes with specific DishTypes.
 
-3. Cook Management:
+3. **Cook Management:**
 * Efficiently manage cooks with the Cook table.
 * Add, edit, and remove cooks responsible for preparing various dishes in the kitchen.
 

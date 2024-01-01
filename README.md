@@ -14,6 +14,7 @@ DB Structure
 You can use the following login details
 
 Username: admin
+
 Password: gtb?M237
 
 ## Instalation

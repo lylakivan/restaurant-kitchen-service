@@ -94,8 +94,6 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES["default"].update(db_from_env)
 
 
-# DATABASE_URL = "postgres://byiwvjax:J0jgztUjTbtl2I-sH1RiIV_pcTX6DLex@balarama.db.elephantsql.com/byiwvjax"
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -134,7 +132,7 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = "staticfiles/"
 
-STATICFILES_DIRS = [BASE_DIR / "static",]
+STATICFILES_DIRS = [BASE_DIR / "static", ]
 
 ASSETS_ROOT = '/static/assets'
 

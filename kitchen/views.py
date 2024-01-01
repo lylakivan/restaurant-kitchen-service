@@ -115,7 +115,10 @@ class CookListView(LoginRequiredMixin, generic.ListView):
 class CookDetailView(LoginRequiredMixin, DetailView):
     model = get_user_model()
     template_name = "kitchen/cook_detail.html"
-    queryset = get_user_model().objects.prefetch_related("dishes", "dishes__dish_type")
+    queryset = get_user_model().objects.prefetch_related(
+        "dishes",
+        "dishes__dish_type"
+    )
 
 
 class CookCreateView(LoginRequiredMixin, generic.CreateView):

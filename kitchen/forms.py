@@ -48,7 +48,7 @@ class CookUpdateForm(forms.ModelForm):
 
     class Meta:
         model = get_user_model()
-        fields = ["first_name", "last_name", "years_of_experience","dishes"]
+        fields = ["first_name", "last_name", "years_of_experience", "dishes"]
 
 
 class DishForm(forms.ModelForm):

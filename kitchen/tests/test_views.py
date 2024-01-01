@@ -1,9 +1,8 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.models import User
-from django.test import TestCase, Client
+from django.test import TestCase
 from django.urls import reverse
 
-from kitchen.models import Dish, DishType, Cook
+from kitchen.models import Dish, DishType
 
 DISH_TYPE_URL = reverse("kitchen:dish_type-list")
 DISH_URL = reverse("kitchen:dish-list")
@@ -110,5 +109,5 @@ class PrivateCookTests(TestCase):
 
         self.assertEqual(new_user.first_name, form_data["first_name"])
         self.assertEqual(new_user.last_name, form_data["last_name"])
-        self.assertEqual(new_user.years_of_experience, form_data["years_of_experience"])
-
+        self.assertEqual(new_user.years_of_experience,
+                         form_data["years_of_experience"])

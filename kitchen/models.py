@@ -1,5 +1,5 @@
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator
 from django.db import models
 
 from kitchen_service import settings
@@ -40,4 +40,3 @@ class Dish(models.Model):
     class Meta:
         verbose_name_plural = "dishes"
         ordering = ("name",)
-

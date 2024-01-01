@@ -38,5 +38,9 @@ class ModelsTests(TestCase):
 
     def test_cook_years_of_experience(self):
         with self.assertRaises(ValidationError):
-            cook = Cook(username="new_chef", first_name="New", last_name="Chef", years_of_experience=0)
+            cook = Cook(
+                username="new_chef",
+                first_name="New",
+                last_name="Chef",
+                years_of_experience=0)
             cook.full_clean()

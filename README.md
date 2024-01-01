@@ -2,6 +2,11 @@
 
 Django project for restaurant kitchen service
 
+DB Structure
+
+![](static/pages/diagram.png)
+
+
 ## Check it out
 
 [Restaurant Kitchen Service deployed to Render](https://restaurant-mate-8on4.onrender.com)
@@ -37,3 +42,17 @@ python manage.py runserver
 * Add, edit, and remove cooks responsible for preparing various dishes in the kitchen.
 
 ## Demo
+![](static/pages/home.png)
+![](static/pages/login.png)
+![](static/pages/dish_type_list.png)
+![](static/pages/dish_type_create.png)
+![](static/pages/dish_type_delete.png)
+![](static/pages/dish_type_update.png)
+![](static/pages/dish_list.png)
+![](static/pages/dish_detail.png)
+![](static/pages/dish_create.png)
+![](static/pages/dish_update.png)
+![](static/pages/cook_list.png)
+![](static/pages/cook_detail.png)
+![](static/pages/cook_create.png)
+![](static/pages/cook_update.png)

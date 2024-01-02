@@ -42,6 +42,13 @@ python manage.py runserver
 * Efficiently manage cooks with the Cook table.
 * Add, edit, and remove cooks responsible for preparing various dishes in the kitchen.
 
+## Loading Initial Data (Optional)
+
+To load initial sample data into your database, you can use the following command:
+
+python manage.py loaddata kitchen_db_data.json
+
+
 ## Demo
 ![](static/pages/home.png)
 ![](static/pages/login.png)
